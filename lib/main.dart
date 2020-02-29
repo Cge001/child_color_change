@@ -182,18 +182,16 @@ class _MyHomePageState extends State<MyHomePage> {
   ///
   void _click(String s) {
     int length = colorStr.length;
-    setState(() {});
-    if (length < 10) {
-      colorStr += s;
-    } else {
-      if (length == 10) {
-        color = int.parse(colorStr);
-        setState(() {});
-        colorStr = '0xff' + s;
+    setState(() {
+      if (length < 10) {
+        colorStr += s;
       } else {
-        colorStr = '0xff' + s;
+        if (length == 10) {
+          colorStr = '0xff' + s;
+        }
       }
-    }
+      color = int.parse(colorStr);
+    });
   }
 
   ///
